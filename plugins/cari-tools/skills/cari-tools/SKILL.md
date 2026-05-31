@@ -1,6 +1,12 @@
 ---
 name: cari-tools
-description: Find & recommend the Skills, Plugins, and MCP servers worth installing for the user's work. Searches the live internet (official registries + GitHub + web), matches them to the stated need, de-duplicates against what's already installed, then hands back the exact install commands. Triggers: "find tools", "find a skill/plugin/mcp for X", "what should I install for X", "recommend an MCP", "/cari-tools".
+description: >-
+  Find & recommend the Skills, Plugins, and MCP servers worth installing for the
+  user's work. Searches the live internet (official registries + GitHub + web),
+  matches them to the stated need, de-duplicates against what's already installed,
+  then hands back the exact install commands. Triggers: "find tools", "find a
+  skill/plugin/mcp for X", "what should I install for X", "recommend an MCP",
+  "/cari-tools".
 ---
 
 This skill turns Claude into a "tool scout": given a work need, it searches the internet for the most relevant Skills, Plugins, and MCP servers, then returns a ranked recommendation with exact install commands. Use the WebSearch and WebFetch tools for live data — do NOT rely on the model's memory, which goes stale fast because registries and marketplaces change quickly.
