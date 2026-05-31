@@ -2,7 +2,7 @@
   "name": "cari-tools",
   "owner": {
     "name": "gemimakruva",
-    "email": "gemigede@gmail.com"
+    "url": "https://github.com/gemimakruva"
   },
   "metadata": {
     "description": "A tool-scout plugin for Claude Code that finds the Skills, Plugins, and MCP servers you should install.",

@@ -32,10 +32,6 @@ claude plugin validate ./plugins/cari-tools
 
 Then run `/cari-tools:cari-tools` and confirm your change behaves as expected.
 
-> **CI note:** the validation workflow lives at `ci/validate.yml`. To make it run on
-> GitHub, a maintainer must copy it to `.github/workflows/validate.yml` and push with a
-> token that has the `workflow` scope (or add it via the GitHub web UI).
-
 ## Pull request flow
 
 1. Fork and create a branch (`git checkout -b add-foo-source`).

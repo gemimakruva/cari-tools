@@ -46,9 +46,10 @@ an individual is officially representing the community in public spaces.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-gemigede@gmail.com. All complaints will be reviewed and investigated promptly
-and fairly.
+reported to the project maintainers by opening an issue at
+https://github.com/gemimakruva/cari-tools/issues (use a private/security report
+if the matter is sensitive). All complaints will be reviewed and investigated
+promptly and fairly.
 
 ## Attribution
 

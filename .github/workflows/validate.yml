@@ -1,15 +1,5 @@
-# CI workflow for cari-tools.
-#
-# NOTE: This file lives in `ci/` instead of `.github/workflows/` because the
-# token used for the initial push did not have GitHub's `workflow` scope.
-# To activate CI, a maintainer should copy this file to
-# `.github/workflows/validate.yml` and push with a token that has the
-# `workflow` scope (or do it via the GitHub web UI, which has full perms):
-#
-#     mkdir -p .github/workflows
-#     cp ci/validate.yml .github/workflows/validate.yml
-#     git add .github/workflows/validate.yml && git commit -m "ci: enable validation workflow" && git push
-
+# CI workflow for cari-tools — validates manifests, SKILL.md frontmatter,
+# and required community-health files on every push and PR to main.
 name: validate
 
 on:
