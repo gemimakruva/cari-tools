@@ -1,0 +1,56 @@
+# CI workflow for cari-tools.
+#
+# NOTE: This file lives in `ci/` instead of `.github/workflows/` because the
+# token used for the initial push did not have GitHub's `workflow` scope.
+# To activate CI, a maintainer should copy this file to
+# `.github/workflows/validate.yml` and push with a token that has the
+# `workflow` scope (or do it via the GitHub web UI, which has full perms):
+#
+#     mkdir -p .github/workflows
+#     cp ci/validate.yml .github/workflows/validate.yml
+#     git add .github/workflows/validate.yml && git commit -m "ci: enable validation workflow" && git push
+
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON manifests
+        run: |
+          for f in .claude-plugin/marketplace.json plugins/cari-tools/.claude-plugin/plugin.json; do
+            echo "Checking $f"
+            python3 -m json.tool "$f" > /dev/null
+          done
+
+      - name: Assert SKILL.md frontmatter
+        run: |
+          python3 - <<'PY'
+          import sys, pathlib, re
+          p = pathlib.Path("plugins/cari-tools/skills/cari-tools/SKILL.md")
+          text = p.read_text(encoding="utf-8")
+          m = re.match(r"^---\n(.*?)\n---\n", text, re.DOTALL)
+          if not m:
+              sys.exit("SKILL.md is missing YAML frontmatter")
+          fm = m.group(1)
+          for field in ("name:", "description:"):
+              if field not in fm:
+                  sys.exit(f"SKILL.md frontmatter missing required field: {field}")
+          if "name: cari-tools" not in fm:
+              sys.exit("SKILL.md frontmatter name must be 'cari-tools'")
+          print("SKILL.md frontmatter OK")
+          PY
+
+      - name: Check required community files exist
+        run: |
+          for f in README.md LICENSE CONTRIBUTING.md CODE_OF_CONDUCT.md; do
+            test -f "$f" || { echo "Missing $f"; exit 1; }
+          done
+          echo "Community files OK"

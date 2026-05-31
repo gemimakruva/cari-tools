@@ -1,0 +1,13 @@
+{
+  "name": "cari-tools",
+  "description": "Tool scout for Claude Code — searches the live internet to recommend the Skills, Plugins, and MCP servers worth installing for your work, then hands back exact install commands.",
+  "version": "1.0.0",
+  "author": {
+    "name": "gemimakruva",
+    "email": "gemigede@gmail.com"
+  },
+  "homepage": "https://github.com/gemimakruva/cari-tools",
+  "repository": "https://github.com/gemimakruva/cari-tools",
+  "license": "MIT",
+  "keywords": ["claude-code", "mcp", "agent-skills", "plugin", "discovery", "tooling"]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "cari-tools",
+  "owner": {
+    "name": "gemimakruva",
+    "email": "gemigede@gmail.com"
+  },
+  "metadata": {
+    "description": "A tool-scout plugin for Claude Code that finds the Skills, Plugins, and MCP servers you should install.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "cari-tools",
+      "source": "./plugins/cari-tools",
+      "description": "Searches the live internet to recommend Skills, Plugins, and MCP servers for your work need, then gives exact install commands."
+    }
+  ]
+}
