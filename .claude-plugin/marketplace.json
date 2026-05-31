@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "A tool-scout plugin for Claude Code that finds the Skills, Plugins, and MCP servers you should install.",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {
